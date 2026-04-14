@@ -1,4 +1,4 @@
-import { PlaceholderMvpContent } from "@/components/PlaceholderMvpContent";
+import { FaqAccordion } from "@/components/FaqAccordion";
 import { PageShell } from "@/components/layout/PageShell";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -13,7 +13,7 @@ export default function FaqPage() {
       title="שאלות נפוצות"
       description="תשובות ישירות לפני שממלאים טופס יצירת קשר."
     >
-      <PlaceholderMvpContent />
+      <FaqAccordion exclusive />
     </PageShell>
   );
 }
