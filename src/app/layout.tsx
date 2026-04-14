@@ -3,6 +3,7 @@ import { Rubik } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Box from "@mui/material/Box";
+import Link from "next/link";
 import { AppThemeProvider } from "@/components/AppThemeProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -50,6 +51,9 @@ export default function RootLayout({
     <html lang={defaultLocale} dir={defaultTextDirection}>
       <body className={rubik.variable}>
         <AppThemeProvider>
+          <Link href="#main-content" className="skip-to-main" prefetch={false}>
+            דלג לתוכן הראשי
+          </Link>
           <Box
             sx={{
               display: "flex",
@@ -58,7 +62,15 @@ export default function RootLayout({
             }}
           >
             <SiteHeader />
-            <Box component="main" id="main-content" sx={{ flex: 1 }}>
+            <Box
+              component="main"
+              id="main-content"
+              tabIndex={-1}
+              sx={{
+                flex: 1,
+                "&:focus": { outline: "none" },
+              }}
+            >
               {children}
             </Box>
             <SiteFooter />

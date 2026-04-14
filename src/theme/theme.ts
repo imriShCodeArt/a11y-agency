@@ -189,5 +189,22 @@ export const theme = createTheme(baseTheme, {
         }),
       },
     },
+
+    /**
+     * Use `start` (logical): stylis-plugin-rtl flips physical `right`/`left`, so `text-align:
+     * right` in theme becomes wrong; `start` follows `dir=rtl` and is not mirrored away.
+     */
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          "& .MuiInputBase-input": {
+            textAlign: "start",
+          },
+          "& textarea.MuiInputBase-input": {
+            textAlign: "start",
+          },
+        },
+      },
+    },
   },
 });

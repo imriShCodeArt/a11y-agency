@@ -1,7 +1,7 @@
 "use client";
 
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -26,14 +26,14 @@ export function RtlLayoutSmokeSection() {
       </Typography>
 
       <Card variant="outlined">
-        <CardContent>
+        <CardContent sx={{ paddingBottom: 2 }}>
           <Typography variant="h3" component="h3" sx={{ fontSize: "1.1rem" }}>
             כרטיס לדוגמה
           </Typography>
           <Typography
             variant="body2"
             color="text.secondary"
-            sx={{ marginBlockStart: 1 }}
+            sx={{ marginBlockStart: 1, marginBlockEnd: 0 }}
           >
             יישור טקסט וריווח פנימי אמורים לעבוד ב־RTL ללא היפוך ידני.
           </Typography>
@@ -42,7 +42,7 @@ export function RtlLayoutSmokeSection() {
           <Button
             variant="contained"
             size="small"
-            endIcon={<ChevronRightIcon aria-hidden />}
+            endIcon={<ChevronLeftIcon aria-hidden />}
           >
             המשך
           </Button>
@@ -58,6 +58,7 @@ export function RtlLayoutSmokeSection() {
             expandIcon={<ExpandMoreIcon aria-hidden />}
             aria-controls="rtl-faq-panel"
             id="rtl-faq-header"
+            sx={{ flexDirection: "row-reverse" }}
           >
             <Typography component="span">מה כלול בביקורת נגישות?</Typography>
           </AccordionSummary>
@@ -72,6 +73,7 @@ export function RtlLayoutSmokeSection() {
             expandIcon={<ExpandMoreIcon aria-hidden />}
             aria-controls="rtl-faq-panel-2"
             id="rtl-faq-header-2"
+            sx={{ flexDirection: "row-reverse" }}
           >
             <Typography component="span">
               כמה זמן נמשך ספרינט תיקונים?

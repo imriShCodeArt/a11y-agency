@@ -33,7 +33,7 @@ export function SiteHeader() {
       <AppBar position="sticky" color="default" elevation={0}>
         <Toolbar
           component="nav"
-          aria-label="ניווט ראשי"
+          aria-label="ניווט בסרגל העליון"
           sx={{ gap: 2, flexWrap: "wrap" }}
         >
           <NavLink
@@ -41,6 +41,7 @@ export function SiteHeader() {
             underline="none"
             color="inherit"
             active={isPrimaryNavActive(pathname, "/")}
+            activeVariant="brand"
             sx={{
               marginInlineEnd: { xs: 0, md: 4 },
               fontWeight: 600,
@@ -108,6 +109,10 @@ export function SiteHeader() {
         anchor="left"
         open={mobileOpen}
         onClose={closeMobile}
+        // Under RTL, MUI flips only the Slide direction, not paper `left: 0`, so the panel
+        // would sit on the physical left but animate from the right. Force the same motion as
+        // LTR left drawers: enter from off-screen left, slide into view toward the right.
+        SlideProps={{ direction: "right" }}
         ModalProps={{
           keepMounted: true,
         }}
@@ -116,7 +121,13 @@ export function SiteHeader() {
             id: drawerId,
             component: "nav",
             "aria-label": "תפריט ניווט",
-            sx: { width: { xs: "min(100vw - 48px, 320px)", sm: 320 }, p: 0 },
+            sx: {
+              width: { xs: "min(100vw, 320px)", sm: 320 },
+              maxWidth: "100vw",
+              p: 0,
+              borderTopLeftRadius: 0,
+              borderBottomLeftRadius: 0,
+            },
           },
         }}
       >
@@ -153,6 +164,7 @@ export function SiteHeader() {
                 href={item.href}
                 underline="hover"
                 active={isPrimaryNavActive(pathname, item.href)}
+                activeVariant="pill"
                 onClick={closeMobile}
                 sx={{ display: "block", py: 1.5, px: 1, borderRadius: 1 }}
               >
@@ -169,6 +181,11 @@ export function SiteHeader() {
             color="primary"
             fullWidth
             onClick={closeMobile}
+            sx={{
+              minHeight: 48,
+              py: 1.25,
+              lineHeight: 1.5,
+            }}
           >
             {headerCtaLabel}
           </Button>

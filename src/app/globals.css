@@ -20,6 +20,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* First focus target: skip repeating navigation (pairs with #main-content in layout). */
+.skip-to-main {
+  position: fixed;
+  top: -120px;
+  inset-inline-start: 8px;
+  z-index: 2000;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background-color: #0f766e;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-to-main:focus,
+.skip-to-main:focus-visible {
+  top: 8px;
+  outline: 2px solid #0d5c56;
+  outline-offset: 2px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -29,4 +52,68 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/*
+ * MUI OutlinedInput labels use physical left + translate(); stylis-plugin-rtl mirrors most rules
+ * but label + notch alignment often stays wrong. These rules live in globals (not Emotion) so
+ * CSSJanus does not flip them again.
+ */
+html[dir="rtl"]
+  .MuiInputLabel-root.MuiInputLabel-outlined:not(.MuiInputLabel-shrink) {
+  left: auto !important;
+  right: 0 !important;
+  transform-origin: top right !important;
+  /* Slightly less than MUI’s 16px so Hebrew/Rubik sits optically centered in the notch */
+  transform: translate(-14px, 14px) scale(1) !important;
+  max-width: calc(100% - 24px);
+  line-height: 1.4375em;
+}
+
+html[dir="rtl"]
+  .MuiInputLabel-root.MuiInputLabel-outlined.MuiInputLabel-sizeSmall:not(
+    .MuiInputLabel-shrink
+  ) {
+  transform: translate(-14px, 8px) scale(1) !important;
+}
+
+html[dir="rtl"]
+  .MuiInputLabel-root.MuiInputLabel-outlined.MuiInputLabel-shrink {
+  max-width: calc(133% - 32px);
+  transform: translate(-14px, -9px) scale(0.75) !important;
+}
+
+html[dir="rtl"] .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  text-align: start;
+}
+
+/*
+ * Single-line outlined inputs: restate MUI’s content-box + height + line-height here so
+ * Rubik/Hebrew isn’t vertically misaligned when Emotion rules pass through CSSJanus.
+ */
+html[dir="rtl"]
+  .MuiOutlinedInput-root:not(.MuiInputBase-multiline)
+  .MuiOutlinedInput-input {
+  box-sizing: content-box !important;
+  height: 1.4375em !important;
+  line-height: 1.4375em !important;
+  padding: 16.5px 14px !important;
+}
+
+html[dir="rtl"]
+  .MuiOutlinedInput-root:not(.MuiInputBase-multiline)
+  .MuiOutlinedInput-input::placeholder {
+  line-height: 1.4375em;
+}
+
+html[dir="rtl"]
+  .MuiOutlinedInput-root.MuiInputBase-sizeSmall:not(.MuiInputBase-multiline)
+  .MuiOutlinedInput-input {
+  padding: 8.5px 14px !important;
+}
+
+/* LTR values inside RTL page (avoid Janus flipping Emotion `text-align: left`). */
+html[dir="rtl"] #rtl-demo-email {
+  direction: ltr;
+  text-align: left;
 }
