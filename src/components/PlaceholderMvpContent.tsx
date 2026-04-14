@@ -3,8 +3,7 @@ import Typography from "@mui/material/Typography";
 export function PlaceholderMvpContent() {
   return (
     <Typography variant="body1" component="p">
-      This route is part of the MVP structure. Copy, layout sections, and CMS
-      wiring will be added in follow-up issues.
+      עמוד זה חלק ממפת ה־MVP. תוכן, מקטעים ועורך תוכן יתווספו בהמשך.
     </Typography>
   );
 }

@@ -1,4 +1,5 @@
 import Typography from "@mui/material/Typography";
+import { RtlLayoutSmokeSection } from "@/components/home/RtlLayoutSmokeSection";
 import { PageShell } from "@/components/layout/PageShell";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
@@ -13,12 +14,13 @@ export default function HomePage() {
   return (
     <PageShell
       title={site.name}
-      description="Lead-focused site for accessibility audits, remediation, statements, and ongoing support. MVP routes and layout are in place; page content will ship in follow-up issues."
+      description="אתר שיווקי ללידים: ביקורות נגישות, תיקונים, הצהרות ותחזוקה. מבנה הדפים והניווט מוכנים; התוכן המלא יגיע בהמשך."
     >
       <Typography variant="body1" component="p">
-        Use the navigation to preview all MVP routes. Each section will be
-        expanded with real copy and components in later work.
+        השתמשו בתפריט כדי לעבור בין דפי ה־MVP. כל הדפים נטענים ב־RTL עם
+        טיפוגרפיה שתומכת בעברית.
       </Typography>
+      <RtlLayoutSmokeSection />
     </PageShell>
   );
 }

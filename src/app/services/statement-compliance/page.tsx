@@ -3,16 +3,15 @@ import { PageShell } from "@/components/layout/PageShell";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Accessibility Statement & Compliance Support",
-  description:
-    "Help publishing and maintaining an accessibility statement aligned with Israeli requirements.",
+  title: "הצהרת נגישות ותמיכה ברגולציה",
+  description: "ליווי בפרסום ותחזוקה של הצהרת נגישות בהתאם לדרישות בישראל.",
 });
 
 export default function StatementCompliancePage() {
   return (
     <PageShell
-      title="Accessibility Statement & Compliance Support"
-      description="Support for statements, templates, and keeping disclosure accurate over time."
+      title="הצהרת נגישות ותמיכה ברגולציה"
+      description="תבניות, ניסוח ועדכון שוטף כדי לשקף נאמנה את מצב הנגישות."
     >
       <PlaceholderMvpContent />
     </PageShell>

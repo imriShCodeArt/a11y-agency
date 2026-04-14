@@ -19,7 +19,7 @@ export function SiteHeader() {
           href="/"
           underline="none"
           color="inherit"
-          sx={{ mr: 4, fontWeight: 600 }}
+          sx={{ marginInlineEnd: 4, fontWeight: 600 }}
         >
           {site.name}
         </NavLink>

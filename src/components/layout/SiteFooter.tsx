@@ -21,7 +21,7 @@ export function SiteFooter() {
     >
       <Container maxWidth="lg">
         <Typography variant="subtitle2" color="text.secondary" gutterBottom>
-          Services
+          שירותים
         </Typography>
         <Stack
           component="ul"
@@ -42,7 +42,7 @@ export function SiteFooter() {
           spacing={2}
           useFlexGap
           flexWrap="wrap"
-          sx={{ mb: 2 }}
+          sx={{ marginBlockEnd: 2 }}
         >
           {primaryNav.map((item) => (
             <NavLink key={item.href} href={item.href}>
@@ -57,7 +57,11 @@ export function SiteFooter() {
             </NavLink>
           ))}
         </Stack>
-        <Typography variant="body2" color="text.secondary" sx={{ mt: 3 }}>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{ marginBlockStart: 3 }}
+        >
           © {new Date().getFullYear()} {site.name}
         </Typography>
       </Container>

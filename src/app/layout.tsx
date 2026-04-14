@@ -1,22 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Rubik } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Box from "@mui/material/Box";
 import { AppThemeProvider } from "@/components/AppThemeProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { defaultLocale, defaultTextDirection } from "@/lib/locale";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const rubik = Rubik({
+  subsets: ["latin", "hebrew"],
+  variable: "--font-rubik",
+  display: "swap",
 });
 
 function metadataBase(): URL {
@@ -38,6 +35,10 @@ export const metadata: Metadata = {
     template: `%s | ${site.name}`,
   },
   description: site.defaultDescription,
+  openGraph: {
+    locale: "he_IL",
+    siteName: site.name,
+  },
 };
 
 export default function RootLayout({
@@ -46,8 +47,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang={defaultLocale} dir={defaultTextDirection}>
+      <body className={rubik.variable}>
         <AppThemeProvider>
           <Box
             sx={{

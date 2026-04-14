@@ -3,16 +3,15 @@ import { PageShell } from "@/components/layout/PageShell";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Contact",
-  description:
-    "Start a conversation about an accessibility review, audit, or remediation plan.",
+  title: "צור קשר",
+  description: "פתיחת שיחה על סקירת נגישות, ביקורת או תכנית תיקונים.",
 });
 
 export default function ContactPage() {
   return (
     <PageShell
-      title="Contact"
-      description="Tell us about your site and goals. A form and scheduling options will land here."
+      title="צור קשר"
+      description="ספרו על האתר והמטרות. טופס ואפשרות קביעת פגישה יתווספו כאן."
     >
       <PlaceholderMvpContent />
     </PageShell>

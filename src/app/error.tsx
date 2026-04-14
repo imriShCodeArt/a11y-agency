@@ -21,14 +21,13 @@ export default function Error({
     <Container maxWidth="sm" component="article" sx={{ py: { xs: 4, md: 6 } }}>
       <Stack spacing={2}>
         <Typography variant="h1" component="h1">
-          Something went wrong
+          משהו השתבש
         </Typography>
         <Typography variant="body1" color="text.secondary" component="p">
-          Please try again. If the problem continues, reach out via the Contact
-          page.
+          נסו שוב. אם הבעיה נמשכת, פנו אלינו דרך עמוד צור קשר.
         </Typography>
         <Button type="button" variant="contained" onClick={reset}>
-          Try again
+          נסו שוב
         </Button>
       </Stack>
     </Container>

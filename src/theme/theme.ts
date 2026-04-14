@@ -3,6 +3,7 @@
 import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
+  direction: "rtl",
   cssVariables: true,
   palette: {
     mode: "light",
@@ -14,6 +15,6 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "var(--font-geist-sans), system-ui, sans-serif",
+    fontFamily: "var(--font-rubik), system-ui, sans-serif",
   },
 });
