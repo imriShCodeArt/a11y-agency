@@ -45,6 +45,8 @@ Edit `.env.local` with real values when you connect services (email, CMS, etc.).
 
 Path alias: `@/*` → `src/*` (see `tsconfig.json`).
 
+**Git / releases:** open PRs to **`staging`** first; merge **`staging` → `main`** for production. Details and branch protection: **`docs/github-branch-flow.md`**.
+
 ## Deploy
 
 **Vercel (recommended):** see **`docs/deployment-vercel.md`** for Hobby setup — production on **`main`**, **`staging`** branch previews, Preview vs Production env vars, and monitoring notes.

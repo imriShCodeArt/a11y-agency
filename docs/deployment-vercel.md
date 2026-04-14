@@ -21,6 +21,8 @@ _(Manual verification: open the deployment URL and smoke-test the app.)_
 
 ## 4. Staging via a dedicated `staging` branch
 
+**Git promotion:** work merges **`feature/*` → `staging` → `main`** (production). GitHub Actions enforce allowed PR heads; see **`docs/github-branch-flow.md`** for the diagram, hotfix exceptions, and branch protection checklist.
+
 On Hobby, **branch previews** (not separate “Custom Environments”) give you a **persistent preview URL for the `staging` branch** as long as that branch exists on the remote.
 
 **Recommended workflow**

@@ -11,6 +11,8 @@ Create one branch per issue using:
 - fix/<issue-number>-<short-name>
 - chore/<issue-number>-<short-name>
 
+Open pull requests against **`staging`** first. Only **`staging`** merges to **`main`** (production). Exception: **`hotfix/*`** may target **`main`** for emergencies—document and backport to **`staging`**. See `docs/github-branch-flow.md`.
+
 Keep each branch focused on a single concern.
 Do not mix feature work, refactors, and unrelated cleanup.
 
