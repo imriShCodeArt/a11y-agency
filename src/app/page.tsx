@@ -1,25 +1,24 @@
-import Container from "@mui/material/Container";
-import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import { PageShell } from "@/components/layout/PageShell";
+import { pageMetadata } from "@/lib/metadata";
+import { site } from "@/lib/site";
 
-export default function Home() {
+export const metadata = pageMetadata({
+  title: site.name,
+  description: site.defaultDescription,
+  absoluteTitle: true,
+});
+
+export default function HomePage() {
   return (
-    <main>
-      <Container maxWidth="sm" sx={{ py: 8 }}>
-        <Stack spacing={3} alignItems="flex-start">
-          <Typography variant="h3" component="h1" gutterBottom>
-            A11y Agency
-          </Typography>
-          <Typography variant="body1" color="text.secondary">
-            Next.js, MUI, Sanity, and accessibility tooling are wired up. Start
-            building from here.
-          </Typography>
-          <Button variant="contained" href="https://nextjs.org/docs">
-            Next.js docs
-          </Button>
-        </Stack>
-      </Container>
-    </main>
+    <PageShell
+      title={site.name}
+      description="Lead-focused site for accessibility audits, remediation, statements, and ongoing support. MVP routes and layout are in place; page content will ship in follow-up issues."
+    >
+      <Typography variant="body1" component="p">
+        Use the navigation to preview all MVP routes. Each section will be
+        expanded with real copy and components in later work.
+      </Typography>
+    </PageShell>
   );
 }
