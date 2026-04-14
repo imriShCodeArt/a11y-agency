@@ -78,7 +78,7 @@ export function ContactForm() {
       <Stack spacing={2.5}>
         {submitted ? (
           <Alert severity="success" role="status">
-            תודה — הקיבלנו את פנייתך (הדגמה ללא שליחה אמיתית). בפרודקשן יחוברו
+            תודה — קיבלנו את פנייתך (הדגמה ללא שליחה אמיתית). בפרודקשן יחוברו
             כאן שליחה לשרת או לספק דוא״ל.
           </Alert>
         ) : null}
