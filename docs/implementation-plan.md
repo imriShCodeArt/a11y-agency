@@ -1,12 +1,15 @@
 # PROJECT_BRIEF.md
 
 ## Project
+
 Website for a web accessibility agency serving Israeli businesses.
 
 ## Document purpose
+
 This file is the project north star.
 
 It defines:
+
 - what the website is
 - who it is for
 - what it offers
@@ -22,6 +25,7 @@ Detailed implementation work, sequencing, and task ownership live in GitHub issu
 This website is a lead-generation website for a web accessibility agency focused on Israeli companies and businesses.
 
 Its job is to help visitors quickly understand:
+
 - what the business does
 - who the services are for
 - what packages and services are offered
@@ -35,6 +39,7 @@ The website should present the business as practical, implementation-oriented, a
 ## 2. Business summary
 
 The business helps Israeli companies improve website accessibility through:
+
 - accessibility reviews
 - full audits
 - remediation work
@@ -44,6 +49,7 @@ The business helps Israeli companies improve website accessibility through:
 The agency should be positioned as a hands-on partner, not just a reporting service.
 
 Core positioning:
+
 - focused on Israeli businesses
 - practical and implementation-oriented
 - not only audits, but also remediation and maintenance
@@ -54,12 +60,14 @@ Core positioning:
 ## 3. Target audience
 
 Primary audiences:
+
 - small business owners
 - marketing managers
 - e-commerce managers
 - product and digital teams
 
 Typical visitor needs:
+
 - understand whether their website has accessibility issues
 - request an audit
 - get accessibility issues fixed
@@ -73,32 +81,39 @@ Typical visitor needs:
 ### Packages
 
 #### Starter
+
 For small businesses.
 
 Includes:
+
 - accessibility risk review
 - accessibility statement
 - quick fixes list
 
 #### Growth
+
 For active business websites.
 
 Includes:
+
 - full website audit
 - remediation sprint
 - retest
 - statement update
 
 #### Continuous
+
 For larger organizations, e-commerce sites, and product teams.
 
 Includes:
+
 - recurring monitoring
 - manual regression testing
 - review of new pages and features
 - quarterly advisory
 
 ### Core services
+
 - Accessibility Risk Review
 - Full Website Audit
 - Remediation Sprint
@@ -110,12 +125,14 @@ Includes:
 ## 5. Website goals
 
 ### Primary goals
+
 - generate contact form submissions
 - generate consultation requests
 - help visitors understand service packages quickly
 - move visitors toward requesting a review or audit
 
 ### Secondary goals
+
 - establish trust and expertise
 - explain the difference between review, remediation, and maintenance
 - show that the agency is practical and implementation-capable
@@ -125,9 +142,11 @@ Includes:
 ## 6. CTA strategy
 
 ### Primary CTA
+
 Request an accessibility review
 
 ### Secondary CTAs
+
 - Book a consultation
 - Get in touch
 - Start with a risk review
@@ -140,6 +159,7 @@ CTA language should stay simple, direct, and action-oriented.
 ## 7. Sitemap
 
 The MVP website should include:
+
 - Home
 - Services Overview
 - Accessibility Risk Review
@@ -159,30 +179,39 @@ The MVP website should include:
 ## 8. Page roles
 
 ### Home
+
 Explain what the business does, who it helps, and how to get started.
 
 ### Services Overview
+
 Present the service model clearly and link to service detail pages.
 
 ### Service pages
+
 Explain who each service is for, what is included, what the process looks like, and when it is the right fit.
 
 ### Packages
+
 Help visitors compare Starter, Growth, and Continuous and choose the right path.
 
 ### About
+
 Build trust and explain the business approach.
 
 ### FAQ
+
 Reduce friction and answer common objections.
 
 ### Contact
+
 Make it easy to start a conversation and collect qualified lead details.
 
 ### Accessibility Statement
+
 Publish the website’s accessibility statement and issue-report path.
 
 ### Privacy
+
 Explain how inquiry data is handled.
 
 ---
@@ -190,6 +219,7 @@ Explain how inquiry data is handled.
 ## 9. Home page structure
 
 The homepage should include:
+
 - hero
 - who this is for
 - core services
@@ -207,6 +237,7 @@ The homepage must make the offer understandable within seconds.
 ## 10. Messaging principles
 
 The website should sound:
+
 - professional
 - trustworthy
 - clear
@@ -214,12 +245,14 @@ The website should sound:
 - direct
 
 Avoid:
+
 - fear-heavy legal language
 - vague agency clichés
 - overly academic WCAG language on top-level pages
 - generic filler copy
 
 Emphasize:
+
 - clarity
 - practical improvement
 - reduced friction
@@ -228,6 +261,7 @@ Emphasize:
 - support over time
 
 The site must clearly separate:
+
 - finding issues
 - fixing issues
 - maintaining accessibility
@@ -237,12 +271,14 @@ The site must clearly separate:
 ## 11. Design principles
 
 The visual direction should communicate:
+
 - professionalism
 - precision
 - calm confidence
 - technical reliability
 
 Design characteristics:
+
 - clean layout
 - strong visual hierarchy
 - generous spacing
@@ -260,6 +296,7 @@ The site itself should act as proof of quality.
 Accessibility is a core project requirement, not a late QA step.
 
 The website must demonstrate:
+
 - semantic structure
 - clear heading hierarchy
 - keyboard usability
@@ -278,12 +315,14 @@ The website should be built and reviewed with accessibility in mind throughout t
 ## 13. Content principles
 
 Content should be:
+
 - Hebrew-first
 - plain and direct
 - decision-maker friendly
 - specific and non-repetitive
 
 Every page should have:
+
 - a clear purpose
 - a clear audience
 - a clear CTA
@@ -296,6 +335,7 @@ Every page should have:
 The SEO strategy should focus on service-intent pages, not content volume.
 
 Priority topics:
+
 - website accessibility in Israel
 - accessibility audit
 - accessibility statement
@@ -304,6 +344,7 @@ Priority topics:
 - ongoing accessibility support
 
 Every important page should have:
+
 - unique metadata
 - a clear search intent
 - internal links to related services or packages
@@ -315,6 +356,7 @@ Every important page should have:
 The website should be built as a lean, maintainable service website.
 
 Core technical goals:
+
 - fast performance
 - accessible structure
 - stable lead flow
@@ -328,6 +370,7 @@ Avoid unnecessary complexity in V1.
 ## 16. Production-ready definition
 
 The website is production-ready only when:
+
 - the positioning is clear in under a few seconds
 - the packages are easy to understand
 - the contact flow works reliably
@@ -342,6 +385,7 @@ The website is production-ready only when:
 ## 17. Launch criteria
 
 Before launch:
+
 - all MVP pages are complete
 - all important CTAs work
 - contact form submissions are reliable
@@ -357,6 +401,7 @@ Before launch:
 ## 18. Out of scope for MVP
 
 Unless explicitly added later, the first version does not require:
+
 - a blog
 - heavy animation systems
 - advanced CMS workflows
@@ -373,6 +418,7 @@ These can be added later if they support growth.
 Use this file to protect project direction.
 
 Use GitHub issues and milestones to manage:
+
 - execution
 - sequencing
 - dependencies

@@ -12,18 +12,18 @@ The website should present the business as a professional, practical accessibili
 
 The site should not feel like a generic “agency website.” It should clearly communicate that the business specializes in:
 
-* identifying accessibility issues
-* fixing them
-* helping clients publish the right compliance-related materials
-* maintaining accessibility over time
+- identifying accessibility issues
+- fixing them
+- helping clients publish the right compliance-related materials
+- maintaining accessibility over time
 
 The website’s job is to make visitors quickly understand:
 
-* what accessibility problems the agency solves
-* who the services are for
-* what packages are offered
-* why this agency is credible
-* how to get started
+- what accessibility problems the agency solves
+- who the services are for
+- what packages are offered
+- why this agency is credible
+- how to get started
 
 ## 2. Business positioning
 
@@ -31,20 +31,20 @@ The business should be positioned as a hands-on partner for website accessibilit
 
 Core positioning:
 
-* focused on Israeli businesses
-* practical and implementation-oriented
-* not only audits, but also remediation and maintenance
-* accessibility as both business value and operational responsibility
+- focused on Israeli businesses
+- practical and implementation-oriented
+- not only audits, but also remediation and maintenance
+- accessibility as both business value and operational responsibility
 
 The tone should be:
 
-* professional
-* trustworthy
-* clear
-* calm
-* direct
-* non-legalistic
-* non-alarmist
+- professional
+- trustworthy
+- clear
+- calm
+- direct
+- non-legalistic
+- non-alarmist
 
 The website should avoid sounding overly technical on the surface, but should still feel expert and serious.
 
@@ -70,12 +70,12 @@ Larger organizations that need ongoing accessibility review, regression testing,
 
 Visitors will likely arrive with one of these needs:
 
-* “I need to know whether my website has accessibility issues.”
-* “I need someone to audit the site.”
-* “I need someone to actually fix the issues.”
-* “I need an accessibility statement.”
-* “I need ongoing help so we do not break accessibility every month.”
-* “I need a partner who understands websites, not just standards.”
+- “I need to know whether my website has accessibility issues.”
+- “I need someone to audit the site.”
+- “I need someone to actually fix the issues.”
+- “I need an accessibility statement.”
+- “I need ongoing help so we do not break accessibility every month.”
+- “I need a partner who understands websites, not just standards.”
 
 The website should answer those needs quickly.
 
@@ -87,10 +87,10 @@ Suggested value proposition:
 
 Supporting message:
 
-* clear review of accessibility issues
-* practical remediation guidance or hands-on fixes
-* accessibility statements and compliance support
-* continued monitoring and testing as the site evolves
+- clear review of accessibility issues
+- practical remediation guidance or hands-on fixes
+- accessibility statements and compliance support
+- continued monitoring and testing as the site evolves
 
 ## 6. Service architecture
 
@@ -106,29 +106,29 @@ The site should present both:
 For small businesses
 Includes:
 
-* accessibility risk review
-* accessibility statement
-* quick fixes list
+- accessibility risk review
+- accessibility statement
+- quick fixes list
 
 #### Growth
 
 For active business websites
 Includes:
 
-* full website audit
-* remediation sprint
-* retest
-* statement update
+- full website audit
+- remediation sprint
+- retest
+- statement update
 
 #### Continuous
 
 For larger organizations, e-commerce sites, and product teams
 Includes:
 
-* recurring monitoring
-* manual regression testing
-* review of new pages and features
-* quarterly advisory
+- recurring monitoring
+- manual regression testing
+- review of new pages and features
+- quarterly advisory
 
 ### Core services
 
@@ -156,16 +156,16 @@ Recurring review and monitoring to reduce regressions and support long-term acce
 
 ### Primary goals
 
-* generate contact form submissions
-* generate consultation requests
-* encourage visitors to request a review or audit
-* make service packages easy to understand
+- generate contact form submissions
+- generate consultation requests
+- encourage visitors to request a review or audit
+- make service packages easy to understand
 
 ### Secondary goals
 
-* establish trust and expertise
-* educate visitors on the difference between review, remediation, and maintenance
-* show that the agency is practical and implementation-capable
+- establish trust and expertise
+- educate visitors on the difference between review, remediation, and maintenance
+- show that the agency is practical and implementation-capable
 
 ## 8. Main conversion actions
 
@@ -174,10 +174,10 @@ The site should focus on one main CTA:
 
 Additional CTAs:
 
-* Book a consultation
-* Get in touch
-* Ask about remediation
-* Start with a risk review
+- Book a consultation
+- Get in touch
+- Ask about remediation
+- Start with a risk review
 
 CTA language should be action-oriented and simple.
 
@@ -187,96 +187,96 @@ CTA language should be action-oriented and simple.
 
 Purpose:
 
-* explain who the business helps
-* explain what it offers
-* introduce the packages
-* drive visitors toward contact
+- explain who the business helps
+- explain what it offers
+- introduce the packages
+- drive visitors toward contact
 
 Suggested sections:
 
-* hero
-* who this is for
-* core services
-* package comparison
-* why work with us
-* process
-* trust section
-* FAQ
-* final CTA
+- hero
+- who this is for
+- core services
+- package comparison
+- why work with us
+- process
+- trust section
+- FAQ
+- final CTA
 
 ### Services overview
 
 Purpose:
 
-* explain the service model clearly
-* separate review, audit, remediation, statement support, and maintenance
+- explain the service model clearly
+- separate review, audit, remediation, statement support, and maintenance
 
 ### Individual service pages
 
 Recommended pages:
 
-* Accessibility Risk Review
-* Full Accessibility Audit
-* Remediation Sprint
-* Accessibility Statement & Compliance Support
-* Ongoing Accessibility Maintenance
+- Accessibility Risk Review
+- Full Accessibility Audit
+- Remediation Sprint
+- Accessibility Statement & Compliance Support
+- Ongoing Accessibility Maintenance
 
 Each page should explain:
 
-* who the service is for
-* what is included
-* what the process looks like
-* what the client receives
-* when this service is the right fit
-* CTA
+- who the service is for
+- what is included
+- what the process looks like
+- what the client receives
+- when this service is the right fit
+- CTA
 
 ### Packages page
 
 Purpose:
 
-* present Starter, Growth, and Continuous in a simple comparison structure
-* help users self-select the right package
+- present Starter, Growth, and Continuous in a simple comparison structure
+- help users self-select the right package
 
 ### About page
 
 Purpose:
 
-* explain the business approach
-* present credibility
-* communicate why accessibility work should be practical and ongoing
+- explain the business approach
+- present credibility
+- communicate why accessibility work should be practical and ongoing
 
 ### FAQ page
 
 Purpose:
 
-* reduce friction and answer common concerns
+- reduce friction and answer common concerns
 
 Topics:
 
-* what is included in an audit
-* do you also fix issues
-* how long it takes
-* whether every business needs ongoing maintenance
-* what an accessibility statement is
-* whether you work with WordPress / Shopify / custom websites
+- what is included in an audit
+- do you also fix issues
+- how long it takes
+- whether every business needs ongoing maintenance
+- what an accessibility statement is
+- whether you work with WordPress / Shopify / custom websites
 
 ### Contact page
 
 Purpose:
 
-* make it easy to start a conversation
-* collect enough info to qualify leads
+- make it easy to start a conversation
+- collect enough info to qualify leads
 
 Suggested fields:
 
-* name
-* company
-* email
-* phone
-* website URL
-* website type
-* what help is needed
-* optional message
+- name
+- company
+- email
+- phone
+- website URL
+- website type
+- what help is needed
+- optional message
 
 ## 10. Home page characterization
 
@@ -284,25 +284,25 @@ Suggested fields:
 
 The hero should immediately communicate:
 
-* what the business does
-* who it helps
-* why it matters
+- what the business does
+- who it helps
+- why it matters
 
 Suggested content direction:
 
-* headline focused on improving website accessibility for Israeli businesses
-* subheadline focused on audits, remediation, statements, and maintenance
-* main CTA to request a review
-* secondary CTA to explore services
+- headline focused on improving website accessibility for Israeli businesses
+- subheadline focused on audits, remediation, statements, and maintenance
+- main CTA to request a review
+- secondary CTA to explore services
 
 ### “Who this is for” section
 
 Show the target client groups:
 
-* small businesses
-* e-commerce websites
-* growing companies
-* digital teams
+- small businesses
+- e-commerce websites
+- growing companies
+- digital teams
 
 ### Services section
 
@@ -316,11 +316,11 @@ Starter / Growth / Continuous in a compact and readable layout.
 
 This section should emphasize:
 
-* practical implementation, not theory only
-* clear priorities
-* structured process
-* accessibility as an ongoing discipline
-* understanding of real websites and real business constraints
+- practical implementation, not theory only
+- clear priorities
+- structured process
+- accessibility as an ongoing discipline
+- understanding of real websites and real business constraints
 
 ### Process section
 
@@ -335,10 +335,10 @@ Suggested 4-step process:
 
 Could include:
 
-* experience with real websites
-* examples of issue types handled
-* platforms worked with
-* optional testimonials later
+- experience with real websites
+- examples of issue types handled
+- platforms worked with
+- optional testimonials later
 
 ### FAQ
 
@@ -352,25 +352,25 @@ Strong contact-oriented section with simple next step.
 
 The messaging should avoid:
 
-* fear-heavy legal phrasing
-* jargon-heavy language
-* vague “inclusive future” agency clichés
-* overly academic WCAG language on top-level pages
+- fear-heavy legal phrasing
+- jargon-heavy language
+- vague “inclusive future” agency clichés
+- overly academic WCAG language on top-level pages
 
 The messaging should emphasize:
 
-* clarity
-* practical improvement
-* reduced friction
-* better usability
-* structured delivery
-* support over time
+- clarity
+- practical improvement
+- reduced friction
+- better usability
+- structured delivery
+- support over time
 
 The site should make a clear distinction between:
 
-* finding issues
-* fixing issues
-* maintaining accessibility
+- finding issues
+- fixing issues
+- maintaining accessibility
 
 That distinction is important for credibility.
 
@@ -378,31 +378,31 @@ That distinction is important for credibility.
 
 The website should visually communicate:
 
-* professionalism
-* precision
-* calm confidence
-* technical reliability
+- professionalism
+- precision
+- calm confidence
+- technical reliability
 
 Design traits:
 
-* clean layout
-* generous spacing
-* strong visual hierarchy
-* readable typography
-* accessible contrast
-* restrained color palette
-* minimal visual clutter
+- clean layout
+- generous spacing
+- strong visual hierarchy
+- readable typography
+- accessible contrast
+- restrained color palette
+- minimal visual clutter
 
 The site itself should demonstrate accessibility best practices:
 
-* strong keyboard usability
-* visible focus states
-* clear headings
-* semantic structure
-* accessible forms
-* readable content
-* mobile usability
-* proper error handling
+- strong keyboard usability
+- visible focus states
+- clear headings
+- semantic structure
+- accessible forms
+- readable content
+- mobile usability
+- proper error handling
 
 The website should serve as a proof point for the business.
 
@@ -410,45 +410,45 @@ The website should serve as a proof point for the business.
 
 ### Required
 
-* contact form
-* package comparison section
-* service detail pages
-* FAQ
-* mobile responsive layout
-* accessible navigation
-* clear CTA placement
-* Hebrew RTL support
+- contact form
+- package comparison section
+- service detail pages
+- FAQ
+- mobile responsive layout
+- accessible navigation
+- clear CTA placement
+- Hebrew RTL support
 
 ### Recommended
 
-* calendar booking integration
-* downloadable checklist or lead magnet later
-* lightweight CMS for content editing
-* case studies section in future phase
+- calendar booking integration
+- downloadable checklist or lead magnet later
+- lightweight CMS for content editing
+- case studies section in future phase
 
 ## 14. Content requirements
 
 The website needs:
 
-* homepage copy
-* service page copy
-* package descriptions
-* FAQ content
-* about page content
-* contact page copy
-* accessibility statement for the website itself
-* metadata for SEO
+- homepage copy
+- service page copy
+- package descriptions
+- FAQ content
+- about page content
+- contact page copy
+- accessibility statement for the website itself
+- metadata for SEO
 
 ## 15. SEO direction
 
 The SEO strategy should target intent-driven searches around:
 
-* website accessibility in Israel
-* accessibility audit
-* accessibility statement
-* website accessibility fixes
-* accessibility for online stores
-* ongoing accessibility support
+- website accessibility in Israel
+- accessibility audit
+- accessibility statement
+- website accessibility fixes
+- accessibility for online stores
+- ongoing accessibility support
 
 The content should be structured around business search intent, not only informational blog content.
 
@@ -456,10 +456,10 @@ The content should be structured around business search intent, not only informa
 
 The business should stand out by presenting itself as:
 
-* implementation-capable
-* focused on websites, not generic consulting
-* suitable for ongoing support
-* easy to work with for real businesses
+- implementation-capable
+- focused on websites, not generic consulting
+- suitable for ongoing support
+- easy to work with for real businesses
 
 A useful differentiator:
 **Not just reports — review, remediation, and maintenance in one service model.**
@@ -468,29 +468,29 @@ A useful differentiator:
 
 The first version of the site should include:
 
-* Home
-* Services
-* Packages
-* About
-* FAQ
-* Contact
+- Home
+- Services
+- Packages
+- About
+- FAQ
+- Contact
 
 And within that MVP, the most important thing is clarity:
 
-* who it is for
-* what it offers
-* how the packages work
-* what the next step is
+- who it is for
+- what it offers
+- how the packages work
+- what the next step is
 
 ## 18. Success criteria
 
 The website will be successful if visitors can understand within a few seconds:
 
-* this business helps improve website accessibility
-* it serves Israeli businesses
-* it offers audits, remediation, statements, and maintenance
-* there is a clear package structure
-* there is an easy next step to start
+- this business helps improve website accessibility
+- it serves Israeli businesses
+- it offers audits, remediation, statements, and maintenance
+- there is a clear package structure
+- there is an easy next step to start
 
 ---
 

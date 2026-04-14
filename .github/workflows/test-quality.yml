@@ -24,5 +24,14 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
 
+      - name: Prettier
+        run: yarn format:check
+
+      - name: ESLint
+        run: yarn lint
+
+      - name: TypeScript
+        run: yarn typecheck
+
       - name: Production build
         run: yarn build

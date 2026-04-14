@@ -1,5 +1,5 @@
 {
-    "editor.hover.enabled": true,
-    "editor.hover.sticky": true,
-    "workbench.hover.delay": 3500,
+  "editor.hover.enabled": true,
+  "editor.hover.sticky": true,
+  "workbench.hover.delay": 3500
 }

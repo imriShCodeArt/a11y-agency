@@ -2,12 +2,16 @@
   "name": "a11y-agency",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "lint:a11y": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "sanity": "sanity",
