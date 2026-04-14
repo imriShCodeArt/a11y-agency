@@ -1,0 +1,38 @@
+---
+alwaysApply: true
+---
+Always work from a GitHub Issue.
+
+Do not start implementation without a clearly defined issue scope and acceptance criteria.
+
+Never work directly on main or master.
+Create one branch per issue using:
+- feature/<issue-number>-<short-name>
+- fix/<issue-number>-<short-name>
+- chore/<issue-number>-<short-name>
+
+Keep each branch focused on a single concern.
+Do not mix feature work, refactors, and unrelated cleanup.
+
+Before coding:
+- restate the goal
+- identify acceptance criteria
+- identify affected files and risks
+- check existing conventions and architecture
+
+During implementation:
+- prefer the smallest clean change
+- avoid premature abstraction
+- preserve backward compatibility unless breaking change is intended
+- do not invent scope not present in the issue
+
+Before completion:
+- run relevant tests, linting, and type checks
+- update docs if setup or behavior changed
+- verify the implementation against acceptance criteria
+
+A task is done only when:
+- acceptance criteria are met
+- checks pass
+- docs/tests are updated if needed
+- the work is ready for PR and review

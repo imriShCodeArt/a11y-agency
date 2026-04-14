@@ -1,0 +1,54 @@
+When I ask you to start work on an issue, treat the referenced GitHub issue as the source of truth for that task.
+
+For every issue:
+- Read the issue first before making changes.
+- Restate the issue goal in clear implementation terms.
+- Extract or infer acceptance criteria from the issue description.
+- Identify the likely files, modules, and systems involved.
+- Identify ambiguity, risk, dependencies, and hidden scope.
+- If the issue is missing clear acceptance criteria or has major ambiguity, do not guess silently. First restate the ambiguity, propose a scoped interpretation, and proceed only with the safest minimal implementation supported by the issue and existing codebase.
+- Propose the smallest clean implementation approach.
+
+Execution rules:
+- One issue = one branch = one PR.
+- Never work directly on main or master.
+- Use a dedicated branch named:
+  - feature/<issue-number>-<short-name>
+  - fix/<issue-number>-<short-name>
+  - chore/<issue-number>-<short-name>
+- Keep the work strictly scoped to the issue.
+- Do not refactor unrelated code.
+- Do not expand scope unless necessary to complete the issue correctly.
+- When hidden work is discovered, surface it clearly and treat it as follow-up work unless it is required for completion.
+- Prefer existing project conventions over introducing new patterns.
+- Prefer the smallest clean change over broad rewrites.
+- Preserve backward compatibility unless the issue explicitly allows breaking changes.
+
+Implementation process:
+- Start with analysis, not coding.
+- Inspect the existing code paths before introducing changes.
+- Reuse established architecture, naming, and file structure.
+- Implement only what is required to satisfy the issue.
+- Keep changes reviewable and logically grouped.
+
+Validation rules:
+- Before considering the task complete, run relevant tests, linting, and type checks.
+- Verify the result against the issue acceptance criteria.
+- Update tests when behavior changes.
+- Update docs when setup, usage, or behavior changes.
+- Summarize what changed, how it satisfies the issue, and what follow-up issues should be created.
+
+Behavior rules:
+- Do not ask me to repeat workflow instructions that are already defined here.
+- Do not start coding immediately without first understanding the issue.
+- Do not invent requirements that are not supported by the issue or the codebase.
+- Do not silently make unrelated cleanup changes.
+- Surface blockers early and clearly.
+
+Definition of done:
+A task is done only when:
+- the issue goal has been implemented
+- acceptance criteria are satisfied
+- relevant checks pass
+- tests/docs are updated where needed
+- the work is ready for PR and review
