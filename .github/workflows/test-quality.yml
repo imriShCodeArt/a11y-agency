@@ -17,12 +17,23 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
+          cache: yarn
+          cache-dependency-path: yarn.lock
 
       - name: Enable Corepack
         run: corepack enable
 
       - name: Install dependencies
         run: yarn install --immutable
+
+      - name: Prettier
+        run: yarn format:check
+
+      - name: ESLint
+        run: yarn lint
+
+      - name: TypeScript
+        run: yarn typecheck
 
       - name: Production build
         run: yarn build
