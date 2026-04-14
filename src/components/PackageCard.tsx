@@ -1,6 +1,6 @@
 "use client";
 
-import CheckCircleRounded from "@mui/icons-material/CheckCircleRounded";
+import CheckRounded from "@mui/icons-material/CheckRounded";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -86,7 +86,7 @@ export function PackageCard({
               ...(isRtl ? { right: -36 } : { left: -36 }),
               width: 148,
               py: 0.5,
-              bgcolor: "primary.dark",
+              bgcolor: "primary.main",
               color: "primary.contrastText",
               fontSize: "0.6875rem",
               fontWeight: 800,
@@ -156,15 +156,28 @@ export function PackageCard({
                 alignItems="flex-start"
                 sx={{ textAlign: "start" }}
               >
-                <CheckCircleRounded
-                  sx={{
-                    fontSize: 22,
-                    color: "primary.main",
-                    flexShrink: 0,
-                    marginTop: "2px",
-                  }}
+                <Box
                   aria-hidden
-                />
+                  sx={{
+                    width: 22,
+                    height: 22,
+                    minWidth: 22,
+                    borderRadius: "50%",
+                    bgcolor: "primary.main",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                    marginTop: "3px",
+                  }}
+                >
+                  <CheckRounded
+                    sx={{
+                      fontSize: 15,
+                      color: "primary.contrastText",
+                    }}
+                  />
+                </Box>
                 <Typography
                   component="span"
                   variant="body2"
@@ -173,6 +186,8 @@ export function PackageCard({
                     color: "text.primary",
                     lineHeight: 1.55,
                     fontSize: "0.9rem",
+                    flex: 1,
+                    minWidth: 0,
                   }}
                 >
                   {line}
@@ -188,6 +203,9 @@ export function PackageCard({
           paddingBlockEnd: { xs: 2.5, sm: 3 },
           paddingBlockStart: 0,
           flexWrap: "wrap",
+          justifyContent: "center",
+          width: "100%",
+          boxSizing: "border-box",
         }}
       >
         <Button
