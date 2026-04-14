@@ -1,0 +1,39 @@
+name: Sync main back to staging
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  sync-main-to-staging:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create sync PR from main to staging
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          existing_pr=$(gh pr list \
+            --base staging \
+            --head main \
+            --state open \
+            --json number \
+            --jq '.[0].number // empty')
+
+          if [ -n "$existing_pr" ]; then
+            echo "Sync PR already exists: #$existing_pr"
+            exit 0
+          fi
+
+          gh pr create \
+            --base staging \
+            --head main \
+            --title "sync: main back into staging" \
+            --body "Automated sync PR to keep staging aligned with main after release."
