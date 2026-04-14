@@ -5,6 +5,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import rtlPlugin from "stylis-plugin-rtl";
+import { prefixer } from "stylis";
 import { theme } from "@/theme/theme";
 
 export function AppThemeProvider({ children }: { children: React.ReactNode }) {
@@ -13,7 +14,8 @@ export function AppThemeProvider({ children }: { children: React.ReactNode }) {
       options={{
         enableCssLayer: true,
         key: "muirtl",
-        stylisPlugins: [rtlPlugin],
+        // prefixer must run before rtlPlugin so transforms and label positioning mirror correctly (MUI RTL guide).
+        stylisPlugins: [prefixer, rtlPlugin],
       }}
     >
       <ThemeProvider theme={theme}>

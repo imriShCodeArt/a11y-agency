@@ -30,3 +30,40 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/*
+ * MUI OutlinedInput labels use physical left + translate(); stylis-plugin-rtl mirrors most rules
+ * but label + notch alignment often stays wrong. These rules live in globals (not Emotion) so
+ * CSSJanus does not flip them again.
+ */
+html[dir="rtl"]
+  .MuiInputLabel-root.MuiInputLabel-outlined:not(.MuiInputLabel-shrink) {
+  left: auto !important;
+  right: 0 !important;
+  transform-origin: top right !important;
+  transform: translate(-14px, 16px) scale(1) !important;
+  max-width: calc(100% - 24px);
+}
+
+html[dir="rtl"]
+  .MuiInputLabel-root.MuiInputLabel-outlined.MuiInputLabel-sizeSmall:not(
+    .MuiInputLabel-shrink
+  ) {
+  transform: translate(-14px, 9px) scale(1) !important;
+}
+
+html[dir="rtl"]
+  .MuiInputLabel-root.MuiInputLabel-outlined.MuiInputLabel-shrink {
+  max-width: calc(133% - 32px);
+  transform: translate(-14px, -9px) scale(0.75) !important;
+}
+
+html[dir="rtl"] .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  text-align: start;
+}
+
+/* LTR values inside RTL page (avoid Janus flipping Emotion `text-align: left`). */
+html[dir="rtl"] #rtl-demo-email {
+  direction: ltr;
+  text-align: left;
+}

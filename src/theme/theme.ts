@@ -190,15 +190,18 @@ export const theme = createTheme(baseTheme, {
       },
     },
 
-    /** Hebrew RTL: typed text and placeholders align with reading direction. */
+    /**
+     * Use `start` (logical): stylis-plugin-rtl flips physical `right`/`left`, so `text-align:
+     * right` in theme becomes wrong; `start` follows `dir=rtl` and is not mirrored away.
+     */
     MuiInputBase: {
       styleOverrides: {
         root: {
           "& .MuiInputBase-input": {
-            textAlign: "right",
+            textAlign: "start",
           },
           "& textarea.MuiInputBase-input": {
-            textAlign: "right",
+            textAlign: "start",
           },
         },
       },

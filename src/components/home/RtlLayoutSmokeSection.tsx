@@ -108,12 +108,6 @@ export function RtlLayoutSmokeSection() {
             label="דוא״ל"
             placeholder="you@example.com"
             fullWidth
-            slotProps={{
-              input: {
-                dir: "ltr",
-                sx: { textAlign: "left" },
-              },
-            }}
           />
           <TextField
             id="rtl-demo-notes"
