@@ -47,10 +47,13 @@ Path alias: `@/*` → `src/*` (see `tsconfig.json`).
 
 ## Deploy
 
-The app is a standard Next.js deployment:
+**Vercel (recommended):** see **`docs/deployment-vercel.md`** for Hobby setup — production on **`main`**, **`staging`** branch previews, Preview vs Production env vars, and monitoring notes.
 
-1. Connect the repository to [Vercel](https://vercel.com/) (or another Node host).
-2. Set environment variables in the host dashboard to match `.env.example` (per environment: Preview ≈ staging, Production).
-3. Build command: `yarn build`. Output: Next.js default.
+Summary:
+
+1. Import the repo in [Vercel](https://vercel.com/); production branch **`main`** (configure in Project → Settings → Git).
+2. Use **`vercel.json`** so installs run `corepack enable && yarn install --immutable` (Yarn 4).
+3. Set environment variables per **Production** / **Preview** / **Development** to match `.env.example`.
+4. Keep a remote **`staging`** branch for a stable staging preview URL (see deployment doc).
 
 CI runs `format:check`, `lint`, `typecheck`, and `yarn build` on pushes and pull requests to `main`.
