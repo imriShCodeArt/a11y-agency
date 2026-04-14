@@ -1,8 +1,8 @@
 import Container from "@mui/material/Container";
-import Stack from "@mui/material/Stack";
 import { PageHero } from "@/components/PageHero";
-import { PlaceholderMvpContent } from "@/components/PlaceholderMvpContent";
+import { TrustProofSection } from "@/components/TrustProofSection";
 import { pageMetadata } from "@/lib/metadata";
+import { SITE_TRUST_ABOUT } from "@/lib/site-trust";
 
 export const metadata = pageMetadata({
   title: "אודות",
@@ -23,9 +23,10 @@ export default function AboutPage() {
         component="article"
         sx={{ py: { xs: 4, md: 6 } }}
       >
-        <Stack spacing={4}>
-          <PlaceholderMvpContent />
-        </Stack>
+        <TrustProofSection
+          content={SITE_TRUST_ABOUT}
+          sectionHeadingId="about-trust-heading"
+        />
       </Container>
     </>
   );

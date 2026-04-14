@@ -5,8 +5,10 @@ import { RtlLayoutSmokeSection } from "@/components/home/RtlLayoutSmokeSection";
 import { PageHero } from "@/components/PageHero";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { ServiceCardsGrid } from "@/components/ServiceCardsGrid";
+import { TrustProofSection } from "@/components/TrustProofSection";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
+import { SITE_TRUST_HOME } from "@/lib/site-trust";
 
 export const metadata = pageMetadata({
   title: site.name,
@@ -50,6 +52,16 @@ export default function HomePage() {
         sx={{ py: { xs: 4, md: 5 }, paddingBlockStart: 0 }}
       >
         <ProcessSteps sectionHeadingId="home-process-heading" />
+      </Container>
+      <Container
+        maxWidth="md"
+        component="div"
+        sx={{ py: { xs: 4, md: 5 }, paddingBlockStart: 0 }}
+      >
+        <TrustProofSection
+          content={SITE_TRUST_HOME}
+          sectionHeadingId="home-trust-heading"
+        />
       </Container>
       <Container maxWidth="md" component="div" sx={{ py: { xs: 4, md: 6 } }}>
         <Stack spacing={4}>
