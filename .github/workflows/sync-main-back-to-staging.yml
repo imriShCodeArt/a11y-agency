@@ -14,9 +14,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Use SYNC_STAGING_FROM_MAIN_TOKEN when the repo blocks GITHUB_TOKEN from
+      # opening PRs (see docs/github-branch-flow.md). Otherwise github.token is enough
+      # if "Allow GitHub Actions to create and approve pull requests" is enabled.
       - name: Create sync PR from main to staging
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.SYNC_STAGING_FROM_MAIN_TOKEN && secrets.SYNC_STAGING_FROM_MAIN_TOKEN || github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
