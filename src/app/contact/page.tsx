@@ -1,4 +1,4 @@
-import { PlaceholderMvpContent } from "@/components/PlaceholderMvpContent";
+import { ContactForm } from "@/components/contact/ContactForm";
 import { PageShell } from "@/components/layout/PageShell";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -11,9 +11,9 @@ export default function ContactPage() {
   return (
     <PageShell
       title="צור קשר"
-      description="ספרו על האתר והמטרות. טופס ואפשרות קביעת פגישה יתווספו כאן."
+      description="מלאו את הפרטים — נחזור אליכם. השליחה כאן היא הדגמה בצד הלקוח בלבד."
     >
-      <PlaceholderMvpContent />
+      <ContactForm />
     </PageShell>
   );
 }
