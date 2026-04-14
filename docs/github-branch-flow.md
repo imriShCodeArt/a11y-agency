@@ -27,6 +27,15 @@ feature|fix|chore/<issue>-<name>  ──PR──►  staging  ──PR──► 
 | **Branch flow (main)**    | PRs targeting `main`              | Head must be **`staging`** or **`hotfix/*`**.                                          |
 | **Branch flow (staging)** | PRs targeting `staging`           | Head must be **`main`**, **`feature/*`**, **`fix/*`**, **`chore/*`**, or bot branches. |
 | **Test quality**          | PRs/pushes to `main` or `staging` | `format:check`, `lint`, `typecheck`, `yarn build`.                                     |
+| **Sync main → staging**   | Push to `main`                    | Opens a **main → staging** PR if none exists (keeps staging aligned with production).  |
+
+### Sync workflow: `GitHub Actions is not permitted to create or approve pull requests`
+
+The default **`GITHUB_TOKEN`** can create PRs only when the repository allows it.
+
+**Option A (recommended):** In the GitHub repo, go to **Settings → Actions → General → Workflow permissions** and enable **Allow GitHub Actions to create and approve pull requests** (wording may vary slightly). Save. The workflow already requests `pull-requests: write`.
+
+**Option B:** Add a repository secret **`SYNC_STAGING_FROM_MAIN_TOKEN`** with a **fine-grained PAT** (this repo: Contents **Read**, Pull requests **Read and write**, Metadata **Read**) or a **classic PAT** with **`repo`** scope. The workflow uses that token instead of `GITHUB_TOKEN` when the secret is set.
 
 ## Branch protection (you configure in GitHub)
 
