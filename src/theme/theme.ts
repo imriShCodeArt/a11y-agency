@@ -189,5 +189,19 @@ export const theme = createTheme(baseTheme, {
         }),
       },
     },
+
+    /** Hebrew RTL: typed text and placeholders align with reading direction. */
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          "& .MuiInputBase-input": {
+            textAlign: "right",
+          },
+          "& textarea.MuiInputBase-input": {
+            textAlign: "right",
+          },
+        },
+      },
+    },
   },
 });
