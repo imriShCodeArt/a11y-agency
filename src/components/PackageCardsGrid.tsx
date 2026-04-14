@@ -7,8 +7,9 @@ export function PackageCardsGrid() {
     <Box
       sx={{
         display: "grid",
-        gap: 2.5,
+        gap: { xs: 2.5, md: 3 },
         gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
+        alignItems: "stretch",
       }}
     >
       {SITE_PACKAGES.map((pkg) => (

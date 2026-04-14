@@ -1,13 +1,14 @@
 "use client";
 
+import CheckCircleRounded from "@mui/icons-material/CheckCircleRounded";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import { useTheme } from "@mui/material/styles";
 import NextLink from "next/link";
 import { useId } from "react";
 
@@ -21,9 +22,20 @@ export type PackageCardProps = {
   titleHeadingLevel?: 2 | 3;
 };
 
+const srOnly: Record<string, string | number> = {
+  position: "absolute",
+  width: 1,
+  height: 1,
+  padding: 0,
+  margin: -1,
+  overflow: "hidden",
+  clip: "rect(0, 0, 0, 0)",
+  whiteSpace: "nowrap",
+  borderWidth: 0,
+};
+
 /**
- * Package tier card: heading, tagline, bullet highlights, single CTA.
- * Optional recommended badge; card surface is not a link (explicit button only).
+ * Package tier card — pricing-style layout: teal title, check list, corner ribbon when recommended.
  */
 export function PackageCard({
   title,
@@ -34,10 +46,12 @@ export function PackageCard({
   recommended,
   titleHeadingLevel = 3,
 }: PackageCardProps) {
+  const theme = useTheme();
   const reactId = useId();
   const badgeId = `package-rec-${reactId.replace(/:/g, "")}`;
   const HeadingTag = titleHeadingLevel === 2 ? "h2" : "h3";
   const headingVariant = titleHeadingLevel === 2 ? "h2" : "h3";
+  const isRtl = theme.direction === "rtl";
 
   return (
     <Card
@@ -46,45 +60,71 @@ export function PackageCard({
       elevation={0}
       aria-describedby={recommended ? badgeId : undefined}
       sx={{
+        position: "relative",
+        overflow: "hidden",
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        ...(recommended
-          ? {
-              borderColor: "primary.main",
-              borderWidth: 2,
-              bgcolor: "action.selected",
-            }
-          : {}),
+        borderRadius: 2.5,
+        bgcolor: "background.paper",
+        borderWidth: recommended ? 2 : 1.5,
+        borderStyle: "solid",
+        borderColor: recommended ? "primary.main" : "primary.light",
+        boxShadow: recommended ? 2 : 0,
       }}
     >
+      {recommended ? (
+        <>
+          <Typography id={badgeId} component="span" sx={srOnly}>
+            חבילה מומלצת
+          </Typography>
+          <Box
+            aria-hidden
+            sx={{
+              position: "absolute",
+              top: 18,
+              ...(isRtl ? { right: -36 } : { left: -36 }),
+              width: 148,
+              py: 0.5,
+              bgcolor: "primary.dark",
+              color: "primary.contrastText",
+              fontSize: "0.6875rem",
+              fontWeight: 800,
+              letterSpacing: "0.02em",
+              textAlign: "center",
+              transform: isRtl ? "rotate(45deg)" : "rotate(-45deg)",
+              boxShadow: 1,
+              zIndex: 1,
+              pointerEvents: "none",
+            }}
+          >
+            מומלץ
+          </Box>
+        </>
+      ) : null}
+
       <CardContent
         sx={{
           flexGrow: 1,
-          paddingBottom: 1,
-          "&:last-child": { paddingBottom: 1 },
+          padding: { xs: 2.5, sm: 3 },
+          paddingTop: recommended ? { xs: 4, sm: 4.5 } : { xs: 2.5, sm: 3 },
+          "&:last-child": { paddingBottom: { xs: 2.5, sm: 3 } },
         }}
       >
-        <Stack spacing={1.5}>
-          {recommended ? (
-            <Chip
-              id={badgeId}
-              label="מומלץ לרוב האתרים העסקיים"
-              color="primary"
-              size="small"
-              sx={{ alignSelf: "flex-start", fontWeight: 600 }}
-            />
-          ) : null}
+        <Stack spacing={2}>
           <Typography
             variant={headingVariant}
             component={HeadingTag}
             sx={{
               margin: 0,
+              color: "primary.main",
+              fontWeight: 800,
               fontSize:
                 titleHeadingLevel === 2
-                  ? { xs: "1.35rem", sm: "1.5rem" }
-                  : { xs: "1.2rem", sm: "1.25rem" },
-              lineHeight: 1.35,
+                  ? { xs: "1.4rem", sm: "1.55rem" }
+                  : { xs: "1.28rem", sm: "1.4rem" },
+              lineHeight: 1.3,
+              paddingInlineEnd: recommended ? 3 : 0,
             }}
           >
             {title}
@@ -93,46 +133,59 @@ export function PackageCard({
             variant="body2"
             color="text.secondary"
             component="p"
-            sx={{ margin: 0 }}
+            sx={{ margin: 0, lineHeight: 1.65, fontSize: "0.9375rem" }}
           >
             {tagline}
           </Typography>
-          <Box component="div">
-            <Typography
-              variant="subtitle2"
-              component="p"
-              sx={{ margin: 0, marginBlockEnd: 0.5, fontWeight: 600 }}
-            >
-              מה כלול
-            </Typography>
-            <Stack
-              component="ul"
-              spacing={0.5}
-              sx={{
-                margin: 0,
-                paddingInlineStart: 2.25,
-                listStyleType: "disc",
-                listStylePosition: "outside",
-              }}
-            >
-              {highlights.map((line) => (
+
+          <Stack
+            component="ul"
+            spacing={1.5}
+            sx={{
+              margin: 0,
+              padding: 0,
+              listStyle: "none",
+            }}
+          >
+            {highlights.map((line) => (
+              <Stack
+                key={line}
+                component="li"
+                direction="row"
+                spacing={1.25}
+                alignItems="flex-start"
+                sx={{ textAlign: "start" }}
+              >
+                <CheckCircleRounded
+                  sx={{
+                    fontSize: 22,
+                    color: "primary.main",
+                    flexShrink: 0,
+                    marginTop: "2px",
+                  }}
+                  aria-hidden
+                />
                 <Typography
-                  key={line}
-                  component="li"
+                  component="span"
                   variant="body2"
-                  sx={{ display: "list-item", paddingInlineStart: 0.25 }}
+                  sx={{
+                    fontWeight: 600,
+                    color: "text.primary",
+                    lineHeight: 1.55,
+                    fontSize: "0.9rem",
+                  }}
                 >
                   {line}
                 </Typography>
-              ))}
-            </Stack>
-          </Box>
+              </Stack>
+            ))}
+          </Stack>
         </Stack>
       </CardContent>
       <CardActions
         sx={{
-          paddingInline: 2,
-          paddingBlockEnd: 2,
+          paddingInline: { xs: 2.5, sm: 3 },
+          paddingBlockEnd: { xs: 2.5, sm: 3 },
           paddingBlockStart: 0,
           flexWrap: "wrap",
         }}
@@ -142,8 +195,16 @@ export function PackageCard({
           href={ctaHref}
           variant="contained"
           color="primary"
-          size="medium"
-          sx={{ minWidth: { xs: "100%", sm: "auto" } }}
+          size="large"
+          sx={{
+            minWidth: { xs: "100%", sm: "auto" },
+            borderRadius: 999,
+            px: 3,
+            py: 1.25,
+            fontWeight: 700,
+            boxShadow: "none",
+            "&:hover": { boxShadow: 1 },
+          }}
         >
           {ctaLabel}
         </Button>
