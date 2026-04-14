@@ -3,9 +3,11 @@
 import NextLink from "next/link";
 import MuiLink from "@mui/material/Link";
 import type { LinkProps } from "@mui/material/Link";
+import { alpha } from "@mui/material/styles";
+import type { Theme } from "@mui/material/styles";
 
 export type NavLinkProps = Omit<LinkProps<typeof NextLink>, "component"> & {
-  /** Sets `aria-current="page"` and emphasis styles for navigation. */
+  /** Sets `aria-current="page"` and clear visual + semantic current-page styles. */
   active?: boolean;
 };
 
@@ -13,11 +15,23 @@ export type NavLinkProps = Omit<LinkProps<typeof NextLink>, "component"> & {
  * MUI Link wired to Next.js App Router. Must be a Client Component so the Next
  * `Link` implementation is not passed from a Server Component as a prop.
  */
-export function NavLink({ active, sx, ...props }: NavLinkProps) {
+export function NavLink({
+  active,
+  sx,
+  color,
+  underline,
+  ...props
+}: NavLinkProps) {
   const mergedSx = active
     ? [
-        { fontWeight: 600, color: "primary.main" },
         ...(sx == null ? [] : Array.isArray(sx) ? sx : [sx]),
+        (t: Theme) => ({
+          fontWeight: 700,
+          color: t.palette.primary.dark,
+          backgroundColor: alpha(t.palette.primary.main, 0.14),
+          borderRadius: t.shape.borderRadius,
+          textDecoration: "none",
+        }),
       ]
     : sx;
 
@@ -25,6 +39,8 @@ export function NavLink({ active, sx, ...props }: NavLinkProps) {
     <MuiLink
       component={NextLink}
       aria-current={active ? "page" : undefined}
+      color={active ? "primary" : color}
+      underline={active ? "none" : underline}
       sx={mergedSx}
       {...props}
     />
