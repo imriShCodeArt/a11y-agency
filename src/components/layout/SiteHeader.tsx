@@ -41,6 +41,7 @@ export function SiteHeader() {
             underline="none"
             color="inherit"
             active={isPrimaryNavActive(pathname, "/")}
+            activeVariant="brand"
             sx={{
               marginInlineEnd: { xs: 0, md: 4 },
               fontWeight: 600,
@@ -163,6 +164,7 @@ export function SiteHeader() {
                 href={item.href}
                 underline="hover"
                 active={isPrimaryNavActive(pathname, item.href)}
+                activeVariant="pill"
                 onClick={closeMobile}
                 sx={{ display: "block", py: 1.5, px: 1, borderRadius: 1 }}
               >
@@ -179,6 +181,11 @@ export function SiteHeader() {
             color="primary"
             fullWidth
             onClick={closeMobile}
+            sx={{
+              minHeight: 48,
+              py: 1.25,
+              lineHeight: 1.5,
+            }}
           >
             {headerCtaLabel}
           </Button>

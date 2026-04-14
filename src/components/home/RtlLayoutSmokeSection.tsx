@@ -26,14 +26,14 @@ export function RtlLayoutSmokeSection() {
       </Typography>
 
       <Card variant="outlined">
-        <CardContent>
+        <CardContent sx={{ paddingBottom: 2 }}>
           <Typography variant="h3" component="h3" sx={{ fontSize: "1.1rem" }}>
             כרטיס לדוגמה
           </Typography>
           <Typography
             variant="body2"
             color="text.secondary"
-            sx={{ marginBlockStart: 1 }}
+            sx={{ marginBlockStart: 1, marginBlockEnd: 0 }}
           >
             יישור טקסט וריווח פנימי אמורים לעבוד ב־RTL ללא היפוך ידני.
           </Typography>
