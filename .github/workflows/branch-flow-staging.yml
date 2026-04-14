@@ -1,0 +1,43 @@
+# Enforces: PRs into `staging` come from `main` (sync) or issue branches feature|fix|chore/* (or bots).
+# Pair with branch protection: require this job on `staging` (see docs/github-branch-flow.md).
+
+name: Branch flow (staging)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited, ready_for_review]
+    branches:
+      - staging
+
+permissions:
+  contents: read
+
+jobs:
+  staging-source:
+    name: staging-source
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require PR head for merge into staging
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          set -euo pipefail
+          head="${HEAD_REF}"
+          if [[ "$head" == "main" ]]; then
+            echo "OK: sync staging from main"
+            exit 0
+          fi
+          if [[ "$head" =~ ^(feature|fix|chore)/ ]]; then
+            echo "OK: PR to staging from issue branch"
+            exit 0
+          fi
+          if [[ "$head" =~ ^dependabot/ ]]; then
+            echo "OK: dependabot"
+            exit 0
+          fi
+          if [[ "$head" =~ ^renovate/ ]]; then
+            echo "OK: renovate"
+            exit 0
+          fi
+          echo "::error title=Invalid merge target::PRs to \`staging\` must come from \`main\` (sync) or \`feature/*\`, \`fix/*\`, \`chore/*\` (or dependabot/renovate). Current head: \`$head\`. See docs/github-branch-flow.md"
+          exit 1

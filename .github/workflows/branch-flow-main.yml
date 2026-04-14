@@ -1,0 +1,35 @@
+# Enforces: only `staging` (or `hotfix/*`) may merge into `main`.
+# Pair with branch protection: require this job on `main` (see docs/github-branch-flow.md).
+
+name: Branch flow (main)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited, ready_for_review]
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  main-source:
+    name: main-source
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require PR head to be staging or hotfix/*
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          set -euo pipefail
+          head="${HEAD_REF}"
+          if [[ "$head" == "staging" ]]; then
+            echo "OK: PR to main from staging"
+            exit 0
+          fi
+          if [[ "$head" =~ ^hotfix/ ]]; then
+            echo "OK: PR to main from hotfix branch"
+            exit 0
+          fi
+          echo "::error title=Invalid merge target::Pull requests to \`main\` must come from \`staging\` or \`hotfix/*\`. Current head: \`$head\`. See docs/github-branch-flow.md"
+          exit 1
