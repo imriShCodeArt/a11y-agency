@@ -20,6 +20,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* First focus target: skip repeating navigation (pairs with #main-content in layout). */
+.skip-to-main {
+  position: fixed;
+  top: -120px;
+  inset-inline-start: 8px;
+  z-index: 2000;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background-color: #0f766e;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-to-main:focus,
+.skip-to-main:focus-visible {
+  top: 8px;
+  outline: 2px solid #0d5c56;
+  outline-offset: 2px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
