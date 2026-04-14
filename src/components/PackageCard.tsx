@@ -78,27 +78,36 @@ export function PackageCard({
           <Typography id={badgeId} component="span" sx={srOnly}>
             חבילה מומלצת
           </Typography>
+          {/* Ribbon lives only in this band so it cannot paint over titles or body copy */}
           <Box
             aria-hidden
             sx={{
-              position: "absolute",
-              top: 18,
-              ...(isRtl ? { right: -36 } : { left: -36 }),
-              width: 148,
-              py: 0.5,
-              bgcolor: "primary.main",
-              color: "primary.contrastText",
-              fontSize: "0.6875rem",
-              fontWeight: 800,
-              letterSpacing: "0.02em",
-              textAlign: "center",
-              transform: isRtl ? "rotate(45deg)" : "rotate(-45deg)",
-              boxShadow: 1,
-              zIndex: 1,
-              pointerEvents: "none",
+              position: "relative",
+              height: 52,
+              flexShrink: 0,
+              overflow: "hidden",
             }}
           >
-            מומלץ
+            <Box
+              sx={{
+                position: "absolute",
+                top: 22,
+                ...(isRtl ? { right: -40 } : { left: -40 }),
+                width: 156,
+                py: 0.5,
+                bgcolor: "primary.main",
+                color: "primary.contrastText",
+                fontSize: "0.6875rem",
+                fontWeight: 800,
+                letterSpacing: "0.02em",
+                textAlign: "center",
+                transform: isRtl ? "rotate(45deg)" : "rotate(-45deg)",
+                boxShadow: 1,
+                pointerEvents: "none",
+              }}
+            >
+              מומלץ
+            </Box>
           </Box>
         </>
       ) : null}
@@ -107,7 +116,7 @@ export function PackageCard({
         sx={{
           flexGrow: 1,
           padding: { xs: 2.5, sm: 3 },
-          paddingTop: recommended ? { xs: 4, sm: 4.5 } : { xs: 2.5, sm: 3 },
+          paddingTop: recommended ? { xs: 2, sm: 2.25 } : { xs: 2.5, sm: 3 },
           "&:last-child": { paddingBottom: { xs: 2.5, sm: 3 } },
         }}
       >
@@ -124,7 +133,6 @@ export function PackageCard({
                   ? { xs: "1.4rem", sm: "1.55rem" }
                   : { xs: "1.28rem", sm: "1.4rem" },
               lineHeight: 1.3,
-              paddingInlineEnd: recommended ? 3 : 0,
             }}
           >
             {title}
@@ -152,8 +160,8 @@ export function PackageCard({
                 key={line}
                 component="li"
                 direction="row"
-                spacing={1.25}
-                alignItems="flex-start"
+                spacing={2.5}
+                alignItems="center"
                 sx={{ textAlign: "start" }}
               >
                 <Box
@@ -168,7 +176,6 @@ export function PackageCard({
                     alignItems: "center",
                     justifyContent: "center",
                     flexShrink: 0,
-                    marginTop: "3px",
                   }}
                 >
                   <CheckRounded
