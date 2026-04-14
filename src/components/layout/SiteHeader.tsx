@@ -33,7 +33,7 @@ export function SiteHeader() {
       <AppBar position="sticky" color="default" elevation={0}>
         <Toolbar
           component="nav"
-          aria-label="ניווט ראשי"
+          aria-label="ניווט בסרגל העליון"
           sx={{ gap: 2, flexWrap: "wrap" }}
         >
           <NavLink

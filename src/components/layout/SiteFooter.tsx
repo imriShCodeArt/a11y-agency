@@ -49,7 +49,7 @@ export function SiteFooter() {
           </Stack>
         </Box>
         <Divider sx={{ my: 2 }} />
-        <Box component="nav" aria-label="ניווט ראשי" sx={{ marginBlockEnd: 2 }}>
+        <Box component="nav" aria-label="ניווט בתחתית הדף" sx={{ marginBlockEnd: 2 }}>
           <Stack
             direction={{ xs: "column", sm: "row" }}
             spacing={2}
