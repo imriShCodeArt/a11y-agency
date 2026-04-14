@@ -1,6 +1,7 @@
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import { CtaSection } from "@/components/CtaSection";
 import { RtlLayoutSmokeSection } from "@/components/home/RtlLayoutSmokeSection";
 import { PageHero } from "@/components/PageHero";
 import { ProcessSteps } from "@/components/ProcessSteps";
@@ -65,6 +66,13 @@ export default function HomePage() {
       </Container>
       <Container maxWidth="md" component="div" sx={{ py: { xs: 4, md: 6 } }}>
         <Stack spacing={4}>
+          <CtaSection
+            sectionHeadingId="home-cta-heading"
+            title="מוכנים לשפר נגישות?"
+            body="נתאים סקירה, ביקורת או תכנית תיקונים לגודל הצוות וללוח הזמנים שלכם."
+            primaryCta={{ href: "/contact", label: "צור קשר" }}
+            secondaryCta={{ href: "/services", label: "השירותים" }}
+          />
           <RtlLayoutSmokeSection />
         </Stack>
       </Container>
