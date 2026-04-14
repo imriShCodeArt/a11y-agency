@@ -30,3 +30,4 @@ Canonical URL structure for the marketing site. **Keep this file aligned with** 
 
 - The service URL **`/services/statement-compliance`** is intentionally distinct from **`/accessibility-statement`** (the published statement for _this_ website).
 - Metadata for standard pages should use `pageMetadata()` from `src/lib/metadata.ts` so titles follow the root `title.template`.
+- Default document language is **Hebrew** (`lang="he"`) with **RTL** layout; see `docs/rtl-and-locale.md`.

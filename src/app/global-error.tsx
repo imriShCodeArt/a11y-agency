@@ -8,7 +8,7 @@ export default function GlobalError({
   reset: () => void;
 }) {
   return (
-    <html lang="en">
+    <html lang="he" dir="rtl">
       <body
         style={{
           fontFamily: "system-ui, sans-serif",
@@ -17,9 +17,9 @@ export default function GlobalError({
           maxWidth: "32rem",
         }}
       >
-        <h1 style={{ fontSize: "1.5rem" }}>Something went wrong</h1>
+        <h1 style={{ fontSize: "1.5rem" }}>משהו השתבש</h1>
         <p style={{ color: "#555" }}>
-          A critical error occurred. Please reload the page or try again later.
+          אירעה תקלה קריטית. רעננו את הדף או נסו שוב מאוחר יותר.
         </p>
         {process.env.NODE_ENV === "development" ? (
           <pre
@@ -42,7 +42,7 @@ export default function GlobalError({
             cursor: "pointer",
           }}
         >
-          Try again
+          נסו שוב
         </button>
       </body>
     </html>

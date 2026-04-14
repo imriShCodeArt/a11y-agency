@@ -1,6 +1,6 @@
 # A11y Agency
 
-Marketing site for a web accessibility agency (Next.js, TypeScript, MUI).
+Marketing site for a web accessibility agency (Next.js, TypeScript, MUI). **Default UI is Hebrew (RTL)**; see `docs/rtl-and-locale.md`.
 
 ## Requirements
 

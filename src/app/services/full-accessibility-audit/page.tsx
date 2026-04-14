@@ -3,16 +3,15 @@ import { PageShell } from "@/components/layout/PageShell";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
-  title: "Full Accessibility Audit",
-  description:
-    "Comprehensive accessibility audit with clear findings and prioritized remediation guidance.",
+  title: "ביקורת נגישות מלאה",
+  description: "ביקורת נגישות מקיפה עם ממצאים ברורים והמלצות לתיקון לפי WCAG.",
 });
 
 export default function FullAccessibilityAuditPage() {
   return (
     <PageShell
-      title="Full Accessibility Audit"
-      description="Deep review aligned with WCAG and practical implementation for your stack."
+      title="ביקורת נגישות מלאה"
+      description="בדיקה עמוקה המותאמת למחסנית שלכם ולדרישות העסק."
     >
       <PlaceholderMvpContent />
     </PageShell>
