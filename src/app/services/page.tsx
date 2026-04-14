@@ -1,4 +1,6 @@
+import Stack from "@mui/material/Stack";
 import { PageShell } from "@/components/layout/PageShell";
+import { ProcessSteps } from "@/components/ProcessSteps";
 import { ServiceCardsGrid } from "@/components/ServiceCardsGrid";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -14,7 +16,10 @@ export default function ServicesPage() {
       title="שירותים"
       description="בחירה בשירות המתאים לשלב שבו האתר או המוצר שלכם נמצאים — מסקירה מהירה ועד ליווי מתמשך."
     >
-      <ServiceCardsGrid titleHeadingLevel={2} />
+      <Stack spacing={{ xs: 5, md: 6 }}>
+        <ServiceCardsGrid titleHeadingLevel={2} />
+        <ProcessSteps sectionHeadingId="services-process-heading" />
+      </Stack>
     </PageShell>
   );
 }

@@ -3,6 +3,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { RtlLayoutSmokeSection } from "@/components/home/RtlLayoutSmokeSection";
 import { PageHero } from "@/components/PageHero";
+import { ProcessSteps } from "@/components/ProcessSteps";
 import { ServiceCardsGrid } from "@/components/ServiceCardsGrid";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
@@ -42,6 +43,13 @@ export default function HomePage() {
           השירותים
         </Typography>
         <ServiceCardsGrid titleHeadingLevel={3} />
+      </Container>
+      <Container
+        maxWidth="md"
+        component="div"
+        sx={{ py: { xs: 4, md: 5 }, paddingBlockStart: 0 }}
+      >
+        <ProcessSteps sectionHeadingId="home-process-heading" />
       </Container>
       <Container maxWidth="md" component="div" sx={{ py: { xs: 4, md: 6 } }}>
         <Stack spacing={4}>
