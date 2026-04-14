@@ -20,43 +20,58 @@ export function SiteFooter() {
       }}
     >
       <Container maxWidth="lg">
-        <Typography variant="subtitle2" color="text.secondary" gutterBottom>
-          שירותים
-        </Typography>
-        <Stack
-          component="ul"
-          spacing={1}
-          sx={{ listStyle: "none", m: 0, p: 0, mb: 3 }}
+        <Box
+          component="nav"
+          aria-labelledby="footer-services-label"
+          sx={{ mb: 3 }}
         >
-          {servicePages.map((item) => (
-            <Box key={item.href} component="li">
-              <NavLink href={item.href} underline="hover">
+          <Typography
+            id="footer-services-label"
+            component="p"
+            variant="subtitle2"
+            color="text.secondary"
+            sx={{ margin: 0, marginBlockEnd: 1 }}
+          >
+            שירותים
+          </Typography>
+          <Stack
+            component="ul"
+            spacing={1}
+            sx={{ listStyle: "none", m: 0, p: 0 }}
+          >
+            {servicePages.map((item) => (
+              <Box key={item.href} component="li">
+                <NavLink href={item.href} underline="hover">
+                  {item.label}
+                </NavLink>
+              </Box>
+            ))}
+          </Stack>
+        </Box>
+        <Divider sx={{ my: 2 }} />
+        <Box component="nav" aria-label="ניווט ראשי" sx={{ marginBlockEnd: 2 }}>
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={2}
+            useFlexGap
+            flexWrap="wrap"
+          >
+            {primaryNav.map((item) => (
+              <NavLink key={item.href} href={item.href}>
                 {item.label}
               </NavLink>
-            </Box>
-          ))}
-        </Stack>
-        <Divider sx={{ my: 2 }} />
-        <Stack
-          direction={{ xs: "column", sm: "row" }}
-          spacing={2}
-          useFlexGap
-          flexWrap="wrap"
-          sx={{ marginBlockEnd: 2 }}
-        >
-          {primaryNav.map((item) => (
-            <NavLink key={item.href} href={item.href}>
-              {item.label}
-            </NavLink>
-          ))}
-        </Stack>
-        <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
-          {legalNav.map((item) => (
-            <NavLink key={item.href} href={item.href}>
-              {item.label}
-            </NavLink>
-          ))}
-        </Stack>
+            ))}
+          </Stack>
+        </Box>
+        <Box component="nav" aria-label="קישורים משפטיים">
+          <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
+            {legalNav.map((item) => (
+              <NavLink key={item.href} href={item.href}>
+                {item.label}
+              </NavLink>
+            ))}
+          </Stack>
+        </Box>
         <Typography
           variant="body2"
           color="text.secondary"
