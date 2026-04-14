@@ -120,7 +120,13 @@ export function SiteHeader() {
             id: drawerId,
             component: "nav",
             "aria-label": "תפריט ניווט",
-            sx: { width: { xs: "min(100vw - 48px, 320px)", sm: 320 }, p: 0 },
+            sx: {
+              width: { xs: "min(100vw, 320px)", sm: 320 },
+              maxWidth: "100vw",
+              p: 0,
+              borderTopLeftRadius: 0,
+              borderBottomLeftRadius: 0,
+            },
           },
         }}
       >
