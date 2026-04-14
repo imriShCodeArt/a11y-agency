@@ -12,6 +12,14 @@ export const primaryNav = [
   { href: "/contact", label: "צור קשר" },
 ] as const;
 
+/** True when `pathname` is this primary nav route (exact for `/`, prefix match for nested routes). */
+export function isPrimaryNavActive(pathname: string, href: string): boolean {
+  if (href === "/") {
+    return pathname === "/";
+  }
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export const servicePages = [
   {
     href: "/services/accessibility-risk-review",
