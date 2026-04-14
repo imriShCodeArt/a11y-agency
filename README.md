@@ -41,7 +41,7 @@ Edit `.env.local` with real values when you connect services (email, CMS, etc.).
 - `src/components` — Shared React components
 - `src/content` — Content-oriented modules or static content helpers
 - `src/lib` — Shared utilities, clients, and non-UI logic
-- `src/theme` — Theme and design tokens
+- `src/theme` — MUI theme, component defaults, and `tokens.ts` (colors, type scale, spacing unit, radii, shadows)
 
 Path alias: `@/*` → `src/*` (see `tsconfig.json`).
 

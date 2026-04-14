@@ -8,12 +8,7 @@ import { site } from "@/lib/site";
 
 export function SiteHeader() {
   return (
-    <AppBar
-      position="sticky"
-      color="default"
-      elevation={0}
-      sx={{ borderBottom: 1, borderColor: "divider" }}
-    >
+    <AppBar position="sticky" color="default" elevation={0}>
       <Toolbar component="nav" aria-label="Primary">
         <NavLink
           href="/"
