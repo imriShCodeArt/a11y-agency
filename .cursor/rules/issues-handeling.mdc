@@ -30,7 +30,12 @@ Implementation process:
 - Reuse established architecture, naming, and file structure.
 - Implement only what is required to satisfy the issue.
 - Keep changes reviewable and logically grouped.
-- If the issue contains a task list or checklist, mark items as checked only when they are actually completed.
+After completing work on an issue, if gh CLI is available and authenticated, update the GitHub issue body itself to reflect progress:
+- read the current issue body
+- check only the completed task and acceptance-criteria checkboxes
+- write the updated body back to GitHub
+- do not mark unchecked items unless they are truly complete
+- if the issue body could not be updated, explicitly report that the remote checkbox update did not happen
 
 Validation rules:
 - Before considering the task complete, run relevant tests, linting, and type checks.
