@@ -30,6 +30,7 @@ Implementation process:
 - Reuse established architecture, naming, and file structure.
 - Implement only what is required to satisfy the issue.
 - Keep changes reviewable and logically grouped.
+- If the issue contains a task list or checklist, mark items as checked only when they are actually completed.
 
 Validation rules:
 - Before considering the task complete, run relevant tests, linting, and type checks.
@@ -37,6 +38,7 @@ Validation rules:
 - Update tests when behavior changes.
 - Update docs when setup, usage, or behavior changes.
 - Summarize what changed, how it satisfies the issue, and what follow-up issues should be created.
+- If the issue contains acceptance criteria checkboxes, mark them as checked only when they are truly satisfied by the implementation.
 
 Behavior rules:
 - Do not ask me to repeat workflow instructions that are already defined here.
