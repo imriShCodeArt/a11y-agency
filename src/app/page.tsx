@@ -1,7 +1,9 @@
 import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 import { RtlLayoutSmokeSection } from "@/components/home/RtlLayoutSmokeSection";
 import { PageHero } from "@/components/PageHero";
+import { ServiceCardsGrid } from "@/components/ServiceCardsGrid";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
@@ -21,6 +23,26 @@ export default function HomePage() {
         primaryCta={{ href: "/contact", label: "צור קשר" }}
         secondaryCta={{ href: "/services", label: "שירותים" }}
       />
+      <Container
+        maxWidth="lg"
+        component="section"
+        aria-labelledby="home-services-heading"
+        sx={{ py: { xs: 4, md: 5 } }}
+      >
+        <Typography
+          id="home-services-heading"
+          variant="h2"
+          component="h2"
+          sx={{
+            margin: 0,
+            marginBlockEnd: 3,
+            fontSize: { xs: "1.5rem", md: "1.75rem" },
+          }}
+        >
+          השירותים
+        </Typography>
+        <ServiceCardsGrid titleHeadingLevel={3} />
+      </Container>
       <Container maxWidth="md" component="div" sx={{ py: { xs: 4, md: 6 } }}>
         <Stack spacing={4}>
           <RtlLayoutSmokeSection />
