@@ -17,15 +17,17 @@ jobs:
       - name: Create sync PR from main to staging
         env:
           GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
           set -euo pipefail
 
-          existing_pr=$(gh pr list \
+          existing_pr="$(gh pr list \
+            --repo "$GH_REPO" \
             --base staging \
             --head main \
             --state open \
             --json number \
-            --jq '.[0].number // empty')
+            --jq '.[0].number // empty')"
 
           if [ -n "$existing_pr" ]; then
             echo "Sync PR already exists: #$existing_pr"
@@ -33,6 +35,7 @@ jobs:
           fi
 
           gh pr create \
+            --repo "$GH_REPO" \
             --base staging \
             --head main \
             --title "sync: main back into staging" \
