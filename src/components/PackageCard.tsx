@@ -61,7 +61,8 @@ export function PackageCard({
       aria-describedby={recommended ? badgeId : undefined}
       sx={{
         position: "relative",
-        overflow: "hidden",
+        /* Let the corner ribbon paint past the inner edge; border-radius still clips the card background */
+        overflow: "visible",
         height: "100%",
         display: "flex",
         flexDirection: "column",
@@ -78,30 +79,34 @@ export function PackageCard({
           <Typography id={badgeId} component="span" sx={srOnly}>
             חבילה מומלצת
           </Typography>
-          {/* Ribbon lives only in this band so it cannot paint over titles or body copy */}
+          {/* Reserves vertical space; ribbon is not clipped (no overflow:hidden) */}
           <Box
             aria-hidden
             sx={{
               position: "relative",
-              height: 52,
+              minHeight: 44,
               flexShrink: 0,
-              overflow: "hidden",
+              overflow: "visible",
             }}
           >
             <Box
               sx={{
                 position: "absolute",
-                top: 22,
-                ...(isRtl ? { right: -40 } : { left: -40 }),
-                width: 156,
-                py: 0.5,
+                top: 10,
+                ...(isRtl ? { right: -22 } : { left: -22 }),
+                width: 118,
+                py: 0.75,
+                px: 0.5,
                 bgcolor: "primary.main",
                 color: "primary.contrastText",
-                fontSize: "0.6875rem",
+                fontSize: "0.7rem",
                 fontWeight: 800,
-                letterSpacing: "0.02em",
+                letterSpacing: "0.03em",
                 textAlign: "center",
+                lineHeight: 1.2,
+                whiteSpace: "nowrap",
                 transform: isRtl ? "rotate(45deg)" : "rotate(-45deg)",
+                transformOrigin: isRtl ? "100% 0%" : "0% 0%",
                 boxShadow: 1,
                 pointerEvents: "none",
               }}
@@ -116,7 +121,9 @@ export function PackageCard({
         sx={{
           flexGrow: 1,
           padding: { xs: 2.5, sm: 3 },
-          paddingTop: recommended ? { xs: 2, sm: 2.25 } : { xs: 2.5, sm: 3 },
+          paddingTop: recommended ? { xs: 1.5, sm: 1.75 } : { xs: 2.5, sm: 3 },
+          /* Keep copy out of the diagonal ribbon’s path (inline-start = physical right in RTL) */
+          paddingInlineStart: recommended ? { xs: 4.5, sm: 5 } : undefined,
           "&:last-child": { paddingBottom: { xs: 2.5, sm: 3 } },
         }}
       >
