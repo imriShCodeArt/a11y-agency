@@ -107,7 +107,7 @@ export function PackageCard({
         sx={{
           flexGrow: 1,
           paddingInline: { xs: 2.5, sm: 3 },
-          paddingTop: recommended ? 5 : { xs: 2.5, sm: 3 },
+          paddingTop: 5,
           "&:last-child": { paddingBottom: { xs: 2.5, sm: 3 } },
         }}
       >
