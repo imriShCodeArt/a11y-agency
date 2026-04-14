@@ -1,10 +1,10 @@
-name: Test quality
+name: Test quality (staging)
 
 on:
   push:
-    branches: [main, staging]
+    branches: [staging]
   pull_request:
-    branches: [main, staging]
+    branches: [staging]
 
 jobs:
   build:

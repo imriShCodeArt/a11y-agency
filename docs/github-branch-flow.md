@@ -22,11 +22,12 @@ feature|fix|chore/<issue>-<name>  ──PR──►  staging  ──PR──► 
 
 ## Automation in this repo
 
-| Workflow                  | When it runs                      | What it enforces                                                                       |
-| ------------------------- | --------------------------------- | -------------------------------------------------------------------------------------- |
-| **Branch flow (main)**    | PRs targeting `main`              | Head must be **`staging`** or **`hotfix/*`**.                                          |
-| **Branch flow (staging)** | PRs targeting `staging`           | Head must be **`main`**, **`feature/*`**, **`fix/*`**, **`chore/*`**, or bot branches. |
-| **Test quality**          | PRs/pushes to `main` or `staging` | `format:check`, `lint`, `typecheck`, `yarn build`.                                     |
+| Workflow                   | When it runs                | What it enforces                                                                       |
+| -------------------------- | --------------------------- | -------------------------------------------------------------------------------------- |
+| **Branch flow (main)**     | PRs targeting `main`        | Head must be **`staging`** or **`hotfix/*`**.                                          |
+| **Branch flow (staging)**  | PRs targeting `staging`     | Head must be **`main`**, **`feature/*`**, **`fix/*`**, **`chore/*`**, or bot branches. |
+| **Test quality (main)**    | PRs/pushes to **`main`**    | `format:check`, `lint`, `typecheck`, `yarn build`.                                     |
+| **Test quality (staging)** | PRs/pushes to **`staging`** | Same checks as main.                                                                   |
 
 ## Branch protection (you configure in GitHub)
 
@@ -34,10 +35,10 @@ In **Settings → Rules → Rulesets** (or **Branches → Branch protection**), 
 
 1. **Require a pull request** before merging (and reviews if you want).
 2. **Require status checks to pass** before merging:
-   - For **`main`**: require **`build`** (from **Test quality**) and **`main-source`** (from **Branch flow (main)**).
-   - For **`staging`**: require **`build`** and **`staging-source`** (from **Branch flow (staging)**).
+   - For **`main`**: require **`build`** from **Test quality (main)** (check label is usually `Test quality (main) / build`) and **`main-source`** from **Branch flow (main)**.
+   - For **`staging`**: require **`build`** from **Test quality (staging)** (`Test quality (staging) / build`) and **`staging-source`** from **Branch flow (staging)**.
 
-Exact check names appear on a green PR under **Checks**; if GitHub shows a combined label (e.g. `Branch flow (main) / main-source`), use that in the ruleset.
+Exact check names appear on a green PR under **Checks**; use those strings in the ruleset (they can differ slightly by GitHub UI version).
 
 3. **Restrict who can push** (optional): disallow direct pushes to `main` and `staging` so all changes go through PRs.
 

@@ -58,4 +58,4 @@ Summary:
 3. Set environment variables per **Production** / **Preview** / **Development** to match `.env.example`.
 4. Keep a remote **`staging`** branch for a stable staging preview URL (see deployment doc).
 
-CI runs `format:check`, `lint`, `typecheck`, and `yarn build` on pushes and pull requests to `main`.
+CI runs `format:check`, `lint`, `typecheck`, and `yarn build` via **Test quality (main)** on `main` and **Test quality (staging)** on `staging` (see `docs/github-branch-flow.md`).
