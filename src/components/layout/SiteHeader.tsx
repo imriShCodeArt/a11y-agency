@@ -108,6 +108,10 @@ export function SiteHeader() {
         anchor="left"
         open={mobileOpen}
         onClose={closeMobile}
+        // Under RTL, MUI flips only the Slide direction, not paper `left: 0`, so the panel
+        // would sit on the physical left but animate from the right. Force the same motion as
+        // LTR left drawers: enter from off-screen left, slide into view toward the right.
+        SlideProps={{ direction: "right" }}
         ModalProps={{
           keepMounted: true,
         }}
