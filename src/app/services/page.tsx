@@ -1,5 +1,5 @@
-import { PlaceholderMvpContent } from "@/components/PlaceholderMvpContent";
 import { PageShell } from "@/components/layout/PageShell";
+import { ServiceCardsGrid } from "@/components/ServiceCardsGrid";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
@@ -12,9 +12,9 @@ export default function ServicesPage() {
   return (
     <PageShell
       title="שירותים"
-      description="מבנה השירותים והקישורים לעמודי הפירוט — התוכן המלא יוגדר בהמשך."
+      description="בחירה בשירות המתאים לשלב שבו האתר או המוצר שלכם נמצאים — מסקירה מהירה ועד ליווי מתמשך."
     >
-      <PlaceholderMvpContent />
+      <ServiceCardsGrid titleHeadingLevel={2} />
     </PageShell>
   );
 }
