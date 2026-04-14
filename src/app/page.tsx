@@ -1,6 +1,7 @@
-import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
 import { RtlLayoutSmokeSection } from "@/components/home/RtlLayoutSmokeSection";
-import { PageShell } from "@/components/layout/PageShell";
+import { PageHero } from "@/components/PageHero";
 import { pageMetadata } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
@@ -12,15 +13,19 @@ export const metadata = pageMetadata({
 
 export default function HomePage() {
   return (
-    <PageShell
-      title={site.name}
-      description="אתר שיווקי ללידים: ביקורות נגישות, תיקונים, הצהרות ותחזוקה. מבנה הדפים והניווט מוכנים; התוכן המלא יגיע בהמשך."
-    >
-      <Typography variant="body1" component="p">
-        השתמשו בתפריט כדי לעבור בין דפי ה־MVP. כל הדפים נטענים ב־RTL עם
-        טיפוגרפיה שתומכת בעברית.
-      </Typography>
-      <RtlLayoutSmokeSection />
-    </PageShell>
+    <>
+      <PageHero
+        headline={site.name}
+        subheadline="אתר שיווקי ללידים: ביקורות נגישות, תיקונים, הצהרות ותחזוקה. מבנה הדפים והניווט מוכנים; התוכן המלא יגיע בהמשך."
+        supportingText="השתמשו בתפריט כדי לעבור בין דפי ה־MVP. כל הדפים נטענים ב־RTL עם טיפוגרפיה שתומכת בעברית."
+        primaryCta={{ href: "/contact", label: "צור קשר" }}
+        secondaryCta={{ href: "/services", label: "שירותים" }}
+      />
+      <Container maxWidth="md" component="div" sx={{ py: { xs: 4, md: 6 } }}>
+        <Stack spacing={4}>
+          <RtlLayoutSmokeSection />
+        </Stack>
+      </Container>
+    </>
   );
 }

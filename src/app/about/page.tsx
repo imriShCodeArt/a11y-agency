@@ -1,5 +1,7 @@
+import Container from "@mui/material/Container";
+import Stack from "@mui/material/Stack";
+import { PageHero } from "@/components/PageHero";
 import { PlaceholderMvpContent } from "@/components/PlaceholderMvpContent";
-import { PageShell } from "@/components/layout/PageShell";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
@@ -9,11 +11,22 @@ export const metadata = pageMetadata({
 
 export default function AboutPage() {
   return (
-    <PageShell
-      title="אודות"
-      description="אמון, שיטת עבודה ומה לצפות משיתוף פעולה."
-    >
-      <PlaceholderMvpContent />
-    </PageShell>
+    <>
+      <PageHero
+        headline="אודות"
+        subheadline="אמון, שיטת עבודה ומה לצפות משיתוף פעולה."
+        primaryCta={{ href: "/contact", label: "דברו איתנו" }}
+        secondaryCta={{ href: "/services", label: "השירותים" }}
+      />
+      <Container
+        maxWidth="md"
+        component="article"
+        sx={{ py: { xs: 4, md: 6 } }}
+      >
+        <Stack spacing={4}>
+          <PlaceholderMvpContent />
+        </Stack>
+      </Container>
+    </>
   );
 }
